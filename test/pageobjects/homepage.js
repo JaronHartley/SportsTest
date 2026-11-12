@@ -12,10 +12,6 @@ class HomePage extends Page {
         return $('//button[@id="sort-btn"]')
     }
 
-    get default () {
-        return $('//div[@data-sort="default"]')
-    }
-
     get low2high () {
         return $('//div[@data-sort="price-asc"]')
     }
@@ -44,15 +40,41 @@ class HomePage extends Page {
         return $('//button[@class="active-chip-x"]')
     }
 
+    get activeFilter () {
+        return $('//span[@class="active-chip"]')
+    }
+
+    get checkmark () {
+        return $('//div[@class="sort-option selected"]')
+    }
+
     get selectors () {
-        return [
-            this.low2high,
-            this.high2low,
-            this.nameAsc,
-            this.nameDesc,
-            this.sale,
-            this.new,
-        ]
+        return {
+            low2high: {
+                selector: this.low2high,
+                value: "Price: Low to High"
+            },
+            high2low: {
+                selector: this.high2low,
+                value: "Price: High to Low"
+            },
+            nameAsc: {
+                selector: this.nameAsc,
+                value: "Name: A → Z"
+            },
+            nameDesc: {
+                selector: this.nameDesc,
+                value: "Name: Z → A"
+            },
+            sale: {
+                selector: this.sale,
+                value: "On sale"
+            },
+            new: {
+                selector: this.new,
+                value: "New arrivals"
+            }
+    }
     }
 
     /**
