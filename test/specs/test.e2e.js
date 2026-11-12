@@ -11,6 +11,7 @@ describe('Sort feature coverage test', () => {
             const option = HomePage.selectors[keys[i]]
 
             await HomePage.sort.click()
+            await expect(HomePage.dropdownOpen).toBeExisting()
             await option.selector.click()
             await HomePage.sort.click()
             await expect(HomePage.checkmark).toBeExisting()

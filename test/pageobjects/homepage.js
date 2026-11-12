@@ -48,6 +48,10 @@ class HomePage extends Page {
         return $('//div[@class="sort-option selected"]')
     }
 
+    get dropdownOpen () {
+        return $('//div[@class="sort-dropdown open"]')
+    }
+
     get selectors () {
         return {
             low2high: {
